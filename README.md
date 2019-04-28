@@ -1,10 +1,10 @@
 # Base16 Vim
-See the [Base16 repository](https://github.com/chriskempson/base16) for more information.  
+See the [Base16 repository](https://github.com/base16-community/base16) for more information.  
 This theme was built with [Base16 Builder PHP](https://github.com/chriskempson/base16-builder-php).
 
 Supports graphical Vim and console Vim.
 
-![Base16 Vim](https://raw.github.com/chriskempson/base16-vim/master/base16-vim.png)
+![Base16 Vim](resources/base16-vim.png)
 
 ## Terminal Themes
 For terminal Vim (non-gui) please ensure you are using a base16 terminal theme.
@@ -18,22 +18,22 @@ Add `colorscheme base16-default-dark` to your `~/.vimrc`.
 ### Vundle
 Add the following to your `~/.vimrc` file and run `PluginInstall` in Vim.
 
-    Plugin 'chriskempson/base16-vim'
+    Plugin 'base16-community/base16-vim'
 
 ### vim-plug
 Add the following to your `~/.vimrc` file and run `PlugInstall` in Vim.
 
-    Plug 'chriskempson/base16-vim'
+    Plug 'base16-community/base16-vim'
 
 ### Pathogen
 
     cd ~/.vim/bundle
-    git clone https://github.com/chriskempson/base16-vim.git
+    git clone https://github.com/base16-community/base16-vim
 
 ### Manual
 
     cd ~/.vim/colors
-    git clone git://github.com/chriskempson/base16-vim.git base16
+    git clone https://github.com/base16-community/base16-vim base16
     cp base16/colors/*.vim .
     
 ## 256 colorspace 
@@ -51,24 +51,30 @@ If you are using a ISO-8613-3 compatible terminal (
 [neovim docs](https://neovim.io/doc/user/options.html#'termguicolors')), and
 you see a green or blue line, try to enable `termguicolors`:
 
-```vim
+``` vim
 set termguicolors
 ```
 
 ### Green line numbers
-![green line numbers screenshot](https://raw.github.com/chriskempson/base16-vim/master/without-base16colorspace-256-with-256-terminal-theme.png)
+![green line numbers screenshot](resources/without-base16colorspace-256-with-256-terminal-theme.png)
 
-If your Vim looks like the above image you are using a 256 terminal theme without setting `let base16colorspace=256` in your `~/.vimrc`. Either set `let base16colorspace=256` in your `~/.vimrc` or use a non 256 terminal theme.
+If your Vim looks like the above image you are using a 256 terminal theme
+without setting `let base16colorspace=256` in your `~/.vimrc`. Either set
+`let base16colorspace=256` in your `~/.vimrc` or use a non 256 terminal theme.
 
 ### Blue line numbers
-![blue line numbers screenshot](https://raw.github.com/chriskempson/base16-vim/master/with-base16colorspace-256-without-base16-shell.png)
+![blue line numbers screenshot](resources/with-base16colorspace-256-without-base16-shell.png)
 
-If your Vim looks like the above image you are setting `let base16colorspace=256` in your `~/.vimrc` but either not running [Base16 Shell](https://github.com/chriskempson/base16-shell) or [Base16 Shell](https://github.com/chriskempson/base16-shell) is not working for your terminal. Either ensure [Base16 Shell](https://github.com/chriskempson/base16-shell) is working by running the `colortest` available in the [Base16 Shell](https://github.com/chriskempson/base16-shell) repository or not setting `let base16colorspace=256` in your `~/.vimrc`.
+If your Vim looks like the above image you are setting `let base16colorspace=256`
+in your `~/.vimrc` but either not running [Base16 Shell] or Base16 Shell is not
+working for your terminal. Either ensure Base16 Shell is working by running the
+`colortest` available in the Base16 Shell repository or not setting `let
+base16colorspace=256` in your `~/.vimrc`.
 
 ## Customization
 If you want to do some local customization, you can add something like this to your `~/.vimrc`:
 
-```vim
+``` vim
 function! s:base16_customize() abort
   call Base16hi("MatchParen", g:base16_gui05, g:base16_gui03, g:base16_cterm05, g:base16_cterm03, "bold,italic", "")
 endfunction
@@ -78,3 +84,5 @@ augroup on_change_colorschema
   autocmd ColorScheme * call s:base16_customize()
 augroup END
 ```
+
+[Base16 Shell]: https://github.com/chriskempson/base16-shell
